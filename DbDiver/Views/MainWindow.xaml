@@ -1,0 +1,30 @@
+﻿<mah:MetroWindow x:Class="DbDiver.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:local="clr-namespace:DbDiver"
+        xmlns:core="clr-namespace:DbDiver.Core;assembly=DbDiver.Core"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"                     
+        mc:Ignorable="d"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="Database diver" Height="450" Width="800" ResizeMode="CanResize" WindowTitleBrush="Gray" TitleCharacterCasing="Normal">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Control}">
+                <Setter Property="mah:HeaderedControlHelper.HeaderFontSize" Value="30"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <ContentControl Grid.Row ="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.MenuRegion}"/>
+        <ContentControl Grid.Row ="1" prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}"/>
+        <ContentControl Grid.Row ="2" prism:RegionManager.RegionName="{x:Static core:RegionNames.ProgressRegion}"/>
+    </Grid>
+</mah:MetroWindow>
